@@ -14,17 +14,17 @@
 #import "UIScreen+SSToolkitAdditions.h"
 
 @interface SSRatingPickerViewController ()
-@property (nonatomic, strong, readonly) SSRatingPickerScrollView *scrollView;
+@property (nonatomic, strong) SSRatingPickerScrollView *scrollView;
 @end
 
 @implementation SSRatingPickerViewController
 
-#pragma mark - Accessors
-
-- (SSRatingPickerScrollView *)scrollView {
-	return (SSRatingPickerScrollView *)self.view;
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+#pragma mark - Accessors
 
 - (SSRatingPicker *)ratingPicker {
 	return self.scrollView.ratingPicker;
@@ -44,7 +44,12 @@
 #pragma mark - UIViewController
 
 - (void)loadView {
-	self.view = [[SSRatingPickerScrollView alloc] initWithFrame:CGRectZero];
+    self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+	SSRatingPickerScrollView* scroll = [[SSRatingPickerScrollView alloc] initWithFrame:[self.view bounds]];
+    scroll.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+    self.scrollView = scroll;
+    [self.view addSubview:self.scrollView];
 }
 
 
@@ -53,6 +58,15 @@
 		return toInterfaceOrientation != UIInterfaceOrientationPortraitUpsideDown;
 	}
 	return YES;
+}
+
+- (void)viewDidLoad{
+
+    [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShown:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+
 }
 
 
@@ -72,5 +86,41 @@
 	
 	self.view.frame = CGRectMake(0.0f, 0.0f, size.width, size.height - 10.0f);
 }
+
+#pragma mark - Keyboard
+
+
+- (void)moveTextViewForKeyboard:(NSNotification*)aNotification up:(BOOL)up {
+    NSDictionary* userInfo = [aNotification userInfo];
+    NSTimeInterval animationDuration;
+    UIViewAnimationCurve animationCurve;
+    CGRect keyboardEndFrame;
+    
+    [[userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&animationCurve];
+    [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&animationDuration];
+    [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardEndFrame];
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    [UIView setAnimationCurve:animationCurve];
+    
+    CGRect newFrame = self.scrollView.frame;
+    CGRect keyboardFrame = [self.view convertRect:keyboardEndFrame toView:nil];
+    newFrame.size.height -= keyboardFrame.size.height * (up?1:-1);
+    self.scrollView.frame = newFrame;
+    
+    [UIView commitAnimations];
+}
+
+- (void)keyboardWillShown:(NSNotification*)aNotification
+{
+    [self moveTextViewForKeyboard:aNotification up:YES];
+}
+
+- (void)keyboardWillHide:(NSNotification*)aNotification
+{
+    [self moveTextViewForKeyboard:aNotification up:NO];
+}
+
 
 @end

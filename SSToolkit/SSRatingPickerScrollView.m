@@ -64,7 +64,7 @@
 		
 		_lineView = [[UIView alloc] initWithFrame:CGRectZero];
 		_lineView.backgroundColor = lineColor;
-		_lineView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
+		_lineView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleHeight;
 		[self addSubview:_lineView];
 
 		_reviewTextView = [[SSTextView alloc] initWithFrame:CGRectZero];
@@ -100,6 +100,10 @@
 #pragma mark - UITextViewDelegate
 
 - (void)textViewDidChange:(UITextView *)textView {
+    
+    NSRange range = NSMakeRange(textView.text.length - 1, 1);
+    [textView scrollRangeToVisible:range];
+
 	[self setNeedsDisplay];
 }
 
