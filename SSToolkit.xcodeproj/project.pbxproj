@@ -97,8 +97,6 @@
 		B24E9E74121DC29A0085F81E /* UIColor+SSToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B24E9E36121DC29A0085F81E /* UIColor+SSToolkitAdditions.m */; };
 		B24E9E75121DC29A0085F81E /* UIControl+SSToolkitAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B24E9E37121DC29A0085F81E /* UIControl+SSToolkitAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B24E9E76121DC29A0085F81E /* UIControl+SSToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B24E9E38121DC29A0085F81E /* UIControl+SSToolkitAdditions.m */; };
-		B24E9E77121DC29A0085F81E /* UIDevice+SSToolkitAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B24E9E39121DC29A0085F81E /* UIDevice+SSToolkitAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B24E9E78121DC29A0085F81E /* UIDevice+SSToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B24E9E3A121DC29A0085F81E /* UIDevice+SSToolkitAdditions.m */; };
 		B24E9E79121DC29A0085F81E /* UIImage+SSToolkitAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B24E9E3B121DC29A0085F81E /* UIImage+SSToolkitAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B24E9E7A121DC29A0085F81E /* UIImage+SSToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B24E9E3C121DC29A0085F81E /* UIImage+SSToolkitAdditions.m */; };
 		B24E9E7B121DC29A0085F81E /* UIScrollView+SSToolkitAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B24E9E3D121DC29A0085F81E /* UIScrollView+SSToolkitAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -250,8 +248,6 @@
 		B24E9E36121DC29A0085F81E /* UIColor+SSToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SSToolkitAdditions.m"; sourceTree = "<group>"; };
 		B24E9E37121DC29A0085F81E /* UIControl+SSToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+SSToolkitAdditions.h"; sourceTree = "<group>"; };
 		B24E9E38121DC29A0085F81E /* UIControl+SSToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+SSToolkitAdditions.m"; sourceTree = "<group>"; };
-		B24E9E39121DC29A0085F81E /* UIDevice+SSToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+SSToolkitAdditions.h"; sourceTree = "<group>"; };
-		B24E9E3A121DC29A0085F81E /* UIDevice+SSToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+SSToolkitAdditions.m"; sourceTree = "<group>"; };
 		B24E9E3B121DC29A0085F81E /* UIImage+SSToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SSToolkitAdditions.h"; sourceTree = "<group>"; };
 		B24E9E3C121DC29A0085F81E /* UIImage+SSToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SSToolkitAdditions.m"; sourceTree = "<group>"; };
 		B24E9E3D121DC29A0085F81E /* UIScrollView+SSToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SSToolkitAdditions.h"; sourceTree = "<group>"; };
@@ -518,8 +514,6 @@
 				B24E9E36121DC29A0085F81E /* UIColor+SSToolkitAdditions.m */,
 				B24E9E37121DC29A0085F81E /* UIControl+SSToolkitAdditions.h */,
 				B24E9E38121DC29A0085F81E /* UIControl+SSToolkitAdditions.m */,
-				B24E9E39121DC29A0085F81E /* UIDevice+SSToolkitAdditions.h */,
-				B24E9E3A121DC29A0085F81E /* UIDevice+SSToolkitAdditions.m */,
 				B24E9E3B121DC29A0085F81E /* UIImage+SSToolkitAdditions.h */,
 				B24E9E3C121DC29A0085F81E /* UIImage+SSToolkitAdditions.m */,
 				B279539712FC67E300FFE28D /* UIScreen+SSToolkitAdditions.h */,
@@ -703,7 +697,6 @@
 				B24E9E71121DC29A0085F81E /* SSWebView.h in Headers */,
 				B24E9E73121DC29A0085F81E /* UIColor+SSToolkitAdditions.h in Headers */,
 				B24E9E75121DC29A0085F81E /* UIControl+SSToolkitAdditions.h in Headers */,
-				B24E9E77121DC29A0085F81E /* UIDevice+SSToolkitAdditions.h in Headers */,
 				B24E9E79121DC29A0085F81E /* UIImage+SSToolkitAdditions.h in Headers */,
 				B24E9E7B121DC29A0085F81E /* UIScrollView+SSToolkitAdditions.h in Headers */,
 				B24E9E7D121DC29A0085F81E /* UIView+SSToolkitAdditions.h in Headers */,
@@ -930,7 +923,6 @@
 				B24E9E72121DC29A0085F81E /* SSWebView.m in Sources */,
 				B24E9E74121DC29A0085F81E /* UIColor+SSToolkitAdditions.m in Sources */,
 				B24E9E76121DC29A0085F81E /* UIControl+SSToolkitAdditions.m in Sources */,
-				B24E9E78121DC29A0085F81E /* UIDevice+SSToolkitAdditions.m in Sources */,
 				B24E9E7A121DC29A0085F81E /* UIImage+SSToolkitAdditions.m in Sources */,
 				B24E9E7C121DC29A0085F81E /* UIScrollView+SSToolkitAdditions.m in Sources */,
 				B24E9E7E121DC29A0085F81E /* UIView+SSToolkitAdditions.m in Sources */,
